@@ -1,4 +1,4 @@
-
+const fs = require('fs');
 const alunos = [
     { nome: 'Sabrina', matricula: 101, media: 9.0 },
     { nome: 'Luisa', matricula: 102, media: 9.0 },
@@ -16,6 +16,7 @@ const alunos = [
 
   function adicionarAluno(novoAluno) {
     alunos.push(novoAluno);
+    fs.writeFileSync("db.json", JSON.stringify(alunos));
     
   }
  
@@ -27,11 +28,13 @@ const alunos = [
     if (media !== undefined) {
       alunos[index].media = media;
     }
+    fs.writeFileSync("db.json", JSON.stringify(alunos));
   }
 
 
   function deletarAluno(index) {
     alunos.splice(index, 1);
+    fs.writeFileSync("db.json", JSON.stringify(alunos));
   }
 
   

@@ -1,7 +1,6 @@
 const express = require("express");
 const alunos = require('./alunos');
 const morgan = require('morgan');
-const fs = require('fs');
 
 const app = express();
 app.use(morgan('combined'));
@@ -29,11 +28,8 @@ app.post('/alunos/novo', (req, res) => {
   }
 
   novoAlunos = [nome, matricula, media]
-  fs.writeFileSync("db.json", JSON.stringify(alunos));
-  
 
   alunos.adicionarAluno(novoAlunos)
-  console.log(alunos);
   res.json('Aluno adicionado com sucesso!');
 
     
@@ -46,8 +42,6 @@ app.delete('/alunos/deletar/:index', (req, res) => {
   }
 
   alunos.deletarAluno(index)
-  fs.writeFileSync("db.json", JSON.stringify(alunos));
-  console.log(alunos)
   res.json("Deletado")
 
  });
@@ -63,7 +57,6 @@ app.put('/alunos/atualizar/:index', (req, res) => {
   }
 
   alunos.atualizarAluno(index, nome, media)
-  fs.writeFileSync("db.json", JSON.stringify(alunos));
   res.json("Atualizado")
 
   

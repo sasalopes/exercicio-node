@@ -1,6 +1,1 @@
-[
-    { "nome": "Sabrina", "matricula": 100, "media": 9.0 },
-    { "nome": "Luisa", "matricula": 101, "media": 9.0 },
-    { "nome": "José", "matricula": 102, "media": 6.0 },
-    { "nome": "Júlia", "matricula": 103, "media": 7.0 }
-  ]
+[{"nome":"Sabrina","matricula":101,"media":9},{"nome":"Luisa","matricula":102,"media":9},{"nome":"José","matricula":103,"media":6},{"nome":"Júlia","matricula":104,"media":7},["João",20,7.5]]
