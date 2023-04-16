@@ -3,7 +3,7 @@ const alunos = require('./alunos');
 const morgan = require('morgan');
 
 const app = express();
-app.use(morgan('combined'));
+app.use(morgan('combined', {stream: accessLogStrean}));
 app.use(express.json());
 
 app.get('/alunos', (req, res) => {
