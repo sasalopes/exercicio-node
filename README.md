@@ -1,6 +1,6 @@
 # exercicio-node
 
-Exercicio passado em sala de aula
+Resolução do Exercicio passado em sala de aula, da soulCode
 
 NODE & EXPRESS - ATIVIDADE AVALIATIVA
 Para realizar esta atividade crie um novo projeto em Node e Express e também um repositório no Github.
