@@ -1,6 +1,7 @@
 const express = require("express");
 const alunos = require('./alunos');
 const morgan = require('morgan');
+const fs = require('fs');
 
 const app = express();
 app.use(morgan('combined'));
@@ -21,13 +22,14 @@ app.get('/alunos', (req, res) => {
 });
 
 app.post('/alunos/novo', (req, res) => {
-  const {nome, idade, media} = req.body;
+  const {nome, matricula, media} = req.body;
 
-  if (!nome || !idade || !media) {
-    return res.status(400).json({ error: 'Os campos nome, idade e media são obrigatórios.' });
+  if (!nome || !matricula || !media) {
+    return res.status(400).json({ error: 'Os campos nome, matricula e media são obrigatórios.' });
   }
 
-  novoAlunos = [nome, idade, media]
+  novoAlunos = [nome, matricula, media]
+  fs.writeFileSync("db.json", JSON.stringify(alunos));
   
 
   alunos.adicionarAluno(novoAlunos)
@@ -44,6 +46,7 @@ app.delete('/alunos/deletar/:index', (req, res) => {
   }
 
   alunos.deletarAluno(index)
+  fs.writeFileSync("db.json", JSON.stringify(alunos));
   console.log(alunos)
   res.json("Deletado")
 
@@ -60,6 +63,7 @@ app.put('/alunos/atualizar/:index', (req, res) => {
   }
 
   alunos.atualizarAluno(index, nome, media)
+  fs.writeFileSync("db.json", JSON.stringify(alunos));
   res.json("Atualizado")
 
   

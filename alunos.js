@@ -1,9 +1,9 @@
 
 const alunos = [
-    { nome: 'Sabrina', idade: 34, media: 9.0 },
-    { nome: 'Luisa', idade: 21, media: 9.0 },
-    { nome: 'José', idade: 33, media: 6.0 },
-    { nome: 'Júlia', idade: 18, media: 7.0 }
+    { nome: 'Sabrina', matricula: 101, media: 9.0 },
+    { nome: 'Luisa', matricula: 102, media: 9.0 },
+    { nome: 'José', matricula: 103, media: 6.0 },
+    { nome: 'Júlia', matricula: 104, media: 7.0 }
   ];
 
   function filtrarPorNome(nome) {
