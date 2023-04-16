@@ -42,7 +42,7 @@ app.delete('/alunos/deletar/:index', (req, res) => {
   }
 
   alunos.deletarAluno(index)
-  res.json("Deletado")
+  res.json("Aluno deletado com sucesso!")
 
  });
 
@@ -50,14 +50,13 @@ app.put('/alunos/atualizar/:index', (req, res) => {
   const index = req.params.index;
   const nome = req.query.nome
   const media = req.query.media
-  console.log(index)
 
   if (isNaN(index) || index < 0 || index >= alunos.alunos.length) {
     return res.status(404).json({ error: 'Índice inválido.' });
   }
 
   alunos.atualizarAluno(index, nome, media)
-  res.json("Atualizado")
+  res.json("Aluno atualizado com sucesso")
 
   
 });
